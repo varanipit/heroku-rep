@@ -1,0 +1,17 @@
+{%extends 'blog/base.html'%}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+
+<div class= "container" style="text-align: center">
+    {% for post in posts %}
+  <img src="{{ post.feature_pic.url }}" alt="{{ post.title }}" width="250px" height="250px">
+    <p> {{ post.title }}</p>
+    <p>Created on: {{ post.date_created }}</p>
+    <p>Created on: {{ post.date_updated }}</p>
+  <a class="btn btn-primary" href="/posts/{{post.id}}" role="button">Link</a>
+    {% endfor %}
+</div>
+
+{% endblock %}
